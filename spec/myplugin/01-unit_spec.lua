@@ -40,6 +40,15 @@ describe(PLUGIN_NAME .. ": (schema)", function()
     }, err)
     assert.is_falsy(ok)
   end)
+    
+ 
+ it("provides a default response_header", function()
+   local ok, err = validate({
+     request_header = "My-Request-Header", 
+     response_header = nil, }) 
+   assert.is_nil(err) 
+   assert.is_truthy(ok) 
+ end)
 
 
 end)
